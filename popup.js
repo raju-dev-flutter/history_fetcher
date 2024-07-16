@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error sending history data:', error);
       });
     } else {
-      console.error('No history data received.');
+      console.error('No history data received.'); 
     }
   });
+  
   // if (chrome && chrome.history && typeof chrome.history.search === 'function') {
   //   chrome.history.search({ text: '', maxResults: 1000 }, (data) => {
   //     const historyData = data.map(item => ({
