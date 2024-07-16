@@ -4,9 +4,8 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create('fetchHistory', { periodInMinutes: 1 });
 });
 
-// Listen for messages from the popup
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === 'fetchHistorys') {
+  if (message.action === 'fetchHistory') {
     chrome.history.search({ text: '', maxResults: 1000 }, (data) => {
       const historyData = data.map(item => ({
         title: item.title,
@@ -14,10 +13,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       }));
       sendResponse(historyData);
     });
-    // Required to use `sendResponse` asynchronously
+    // Required to indicate that sendResponse will be used asynchronously
     return true;
   }
 });
+
  
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === 'fetchHistory') {

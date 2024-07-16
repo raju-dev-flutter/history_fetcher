@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "name": "History Fetcher",
   "version": "1.0",
+  "description": "Fetch and send browsing history.",
   "permissions": ["history", "alarms"],
   "background": {
-    "service_worker": "background.js",
-    "periodic": "1 min"
+    "service_worker": "background.js"
   },
   "action": {
     "default_popup": "index.html"
