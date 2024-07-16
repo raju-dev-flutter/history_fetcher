@@ -15,7 +15,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse(historyData);
     });
     // Required to use `sendResponse` asynchronously
-    
     return true;
   }
 });
