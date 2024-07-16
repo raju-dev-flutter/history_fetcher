@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('Popup script loaded');
+  console.log(chrome && chrome.history && typeof chrome.history.search);
+
   if (chrome && chrome.history && typeof chrome.history.search === 'function') {
     chrome.history.search({ text: '', maxResults: 1000 }, (data) => {
       const historyData = data.map(item => ({
