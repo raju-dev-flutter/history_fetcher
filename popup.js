@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         url: item.url
       }));
   
-      fetch('http://localhost:8080/project/history_receiver.php', {
+      fetch('https://raju-dev-flutter.github.io/history_fetcher/history_receiver.php', {
+      // fetch('http://localhost:8080/project/history_receiver.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
