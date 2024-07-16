@@ -8,6 +8,6 @@
     "periodic": "1 min"
   },
   "action": {
-    "default_popup": "index.php"
+    "default_popup": "index.html"
   }
 }
